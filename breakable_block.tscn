@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bmgd7esgdmiyy"]
+
+[ext_resource type="Script" uid="uid://dqhjxgfrcu24b" path="res://breakable_block.gd" id="1_20sil"]
+[ext_resource type="Texture2D" uid="uid://bre8eaxuedts1" path="res://icon.svg" id="2_a7jpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6i5"]
+size = Vector2(128, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohxtn"]
+size = Vector2(128, 58)
+
+[node name="BreakableBlock" type="StaticBody2D" unique_id=388546954]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_20sil")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=866322819]
+texture = ExtResource("2_a7jpp")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1152000035]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_vm6i5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=781763740]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=161542002]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_ohxtn")
+debug_color = Color(0.9976402, 0, 0.17156792, 0.41960785)
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

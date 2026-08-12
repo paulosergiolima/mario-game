@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://br5gwag2k4ii0"]
+
+[ext_resource type="Texture2D" uid="uid://bre8eaxuedts1" path="res://icon.svg" id="1_6eo5e"]
+[ext_resource type="PackedScene" uid="uid://dbn01fa202p3h" path="res://mario.tscn" id="2_aees8"]
+[ext_resource type="PackedScene" uid="uid://bmgd7esgdmiyy" path="res://breakable_block.tscn" id="3_rnkuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aees8"]
+size = Vector2(130.85857, 112)
+
+[node name="Stage" type="Node2D" unique_id=954633385]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=796234494]
+position = Vector2(688, 464)
+scale = Vector2(8.3359375, 1)
+texture = ExtResource("1_6eo5e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1099375395]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1994303661]
+position = Vector2(0.63523865, -1)
+shape = SubResource("RectangleShape2D_aees8")
+metadata/_edit_lock_ = true
+
+[node name="Mario" parent="." unique_id=1953662521 instance=ExtResource("2_aees8")]
+position = Vector2(192, 344)
+
+[node name="BreakableBlock" parent="." unique_id=388546954 instance=ExtResource("3_rnkuw")]
+position = Vector2(352, 200)
+
+[node name="BreakableBlock2" parent="." unique_id=2044952079 instance=ExtResource("3_rnkuw")]
+position = Vector2(576, 320)

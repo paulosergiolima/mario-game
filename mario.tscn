@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dbn01fa202p3h"]
+
+[ext_resource type="Texture2D" uid="uid://bre8eaxuedts1" path="res://icon.svg" id="1_w74su"]
+[ext_resource type="Script" uid="uid://exhmkgolx2l0" path="res://mario.gd" id="1_wrvex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrvex"]
+size = Vector2(80, 80)
+
+[node name="Mario" type="CharacterBody2D" unique_id=979090732]
+script = ExtResource("1_wrvex")
+JUMP_VELOCITY = -800.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=432723420]
+position = Vector2(24, 24)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_w74su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582677808]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_wrvex")
