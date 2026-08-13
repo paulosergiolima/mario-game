@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 
 @export var JUMP_VELOCITY: float
+@export var isBig: bool
+@export var isFlower: bool
+@export var isStar: bool
 var speed = 300
 var running = false
 var max_speed = 600
@@ -45,3 +48,10 @@ func _physics_process(delta: float) -> void:
 		speed = 0
 
 	move_and_slide()
+func test():
+	print("me when I have sex")
+	getBig()
+
+func getBig():
+	scale.y = 1.5
+	pass
