@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://sjx6oknoebvx"]
+
+[ext_resource type="SpriteFrames" path="/home/appk3/Modelos/sprites/mario-game/start/" id="1_22xei"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=211369098]
+scale = Vector2(0.625, 0.625)
+sprite_frames = ExtResource("1_22xei")
+animation = &"start"
+frame_progress = 0.12670955

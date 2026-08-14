@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dbn01fa202p3h"]
 
-[ext_resource type="Texture2D" uid="uid://bre8eaxuedts1" path="res://icon.svg" id="1_w74su"]
 [ext_resource type="Script" uid="uid://exhmkgolx2l0" path="res://mario.gd" id="1_wrvex"]
+[ext_resource type="Texture2D" uid="uid://bnggrsckimk7x" path="res://kirk parado.svg" id="2_wrvex"]
+[ext_resource type="SpriteFrames" path="/home/appk3/Modelos/sprites/mario-game/start/" id="3_4ckko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrvex"]
 size = Vector2(80, 80)
@@ -15,10 +16,17 @@ JUMP_VELOCITY = -800.0
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=432723420]
 position = Vector2(24, 24)
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("1_w74su")
+texture = ExtResource("2_wrvex")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582677808]
 position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_wrvex")
 metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=604832337]
+position = Vector2(112, 28)
+scale = Vector2(0.625, 0.625)
+sprite_frames = ExtResource("3_4ckko")
+animation = &"start"
+frame_progress = 0.41605902

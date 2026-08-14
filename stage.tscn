@@ -11,8 +11,8 @@ size = Vector2(130.85857, 112)
 [node name="Stage" type="Node2D" unique_id=954633385]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=796234494]
-position = Vector2(693, 456)
-scale = Vector2(8.3359375, 1)
+position = Vector2(690.74994, 454)
+scale = Vector2(8.371095, 1.03125)
 texture = ExtResource("1_6eo5e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1099375395]
@@ -26,7 +26,7 @@ shape = SubResource("RectangleShape2D_aees8")
 metadata/_edit_lock_ = true
 
 [node name="Mario" parent="." unique_id=1953662521 instance=ExtResource("2_aees8")]
-position = Vector2(192, 344)
+position = Vector2(226, 363)
 
 [node name="BreakableBlock" parent="." unique_id=388546954 instance=ExtResource("3_rnkuw")]
 position = Vector2(272, 240)

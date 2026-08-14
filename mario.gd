@@ -10,6 +10,7 @@ var running = false
 var max_speed = 600
 var movement = 20
 var last_direction
+var mutex = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,20 +32,22 @@ func _physics_process(delta: float) -> void:
 		max_speed = 600
 		movement = 20
 	if direction and velocity.y == 0:
-		#jogador se movendo no chão
+		mutex = false
 		speed = move_toward(speed, max_speed, movement)
 		last_direction = direction
 		velocity.x = direction * speed
-	elif direction and velocity.y != 0:
-		#jogador se movendo no ar
-		speed = move_toward(speed,max_speed,movement)
-		velocity.x = direction * speed
 	elif velocity.y == 0 and !direction:
-		#jogar parado chão
+		mutex=true
 		speed = 0
 		velocity.x = move_toward(velocity.x, 0, movement)
+	elif direction and velocity.y != 0:
+		if mutex==false:
+			speed = move_toward(speed,max_speed,movement)
+			mutex=true
+		else: speed = move_toward(speed,max_speed/2,movement)
+		velocity.x = direction * speed
 	elif velocity.y != 0:
-		velocity.x = move_toward(velocity.x, 0, movement/4)
+		velocity.x = move_toward(velocity.x, 0, movement)
 		speed = 0
 
 	move_and_slide()
